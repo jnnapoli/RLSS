@@ -1,14 +1,98 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>RLSS</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>RL Scuff Series</title>
+  <!-- latest compiled bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-  <body>
-    <%= yield %>
-  </body>
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+</head>
+
+
+<body style="background-color: #002233; font-family: 'Source Sans Pro'">
+
+
+<div style="background-color: black; display: flex; flex-flow: row wrap;">
+
+  <div style="flex-basis: 33%"></div>
+  <div style="flex-basis: 33%"><img style="height:180px; display:block; margin:auto;" src="/scuffLOGO.png">
+  </div>
+
+  <div style="flex-basis: 33%"></div>
+</div>
+
+
+<!--navigation-->
+
+<nav class="navbar navbar-default navbar-fixed-top" style="margin-top:180px; background-color:midnightblue">
+  <div class="container-fluid navbar-res-width">
+    <div class="navbar-header">
+      <!---->
+      <!--<a class="navbar-brand" href="/"><b>Joey Napoli</b></a>-->
+
+      <!--hamburger button navigation-->
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+    </div>
+
+
+    <!-- these are the navigation links wrapped in a collapsible div-->
+    <div class="collapse navbar-collapse" id="mynavbar">
+
+      <!--the right hand navigation part-->
+      <ul class="nav navbar-nav navbar-right">
+
+        <li>
+          <a href="https://www.twitch.tv/dheg" target="_blank" title="Dheg's Stream">Dheg on Twitch</a>
+        </li>
+
+        <li>
+          <a  href="#" title="Top Clips">Top Clips</a>
+        </li>
+
+        <li>
+          <a href="#" title="Match History">Match History</a>
+        </li>
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+<div style="width=100%; display: flex; flex-flow: row wrap; margin-top:100px">
+  <div style="flex-basis: 10%"></div>
+  <div style="flex-basis: 60%">
+    <div style="width=100%; display:block; margin:auto;"> <%= yield %> </div>
+  </div>
+
+  <div style="flex-basis: 30%"> <div style="display:block; margin:auto;">
+
+    <iframe frameborder="0"
+            scrolling="yes"
+            id="chat_embed"
+            src="http://www.twitch.tv/embed/dheg/chat"
+            height="500"
+            width="350">
+    </iframe>
+     </div>
+  </div>
+
+</div>
+
+
+<!-- jquery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+
+</body>
 </html>

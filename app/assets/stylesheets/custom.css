@@ -1,0 +1,146 @@
+
+
+a:hover{
+    text-decoration:none;
+}
+a:visited{
+    text-decoration:none;
+    color: white;
+}
+html{
+    height: 100%;
+    overflow: hidden;
+}
+a:link{
+    color: white;
+}
+body {
+
+    /*!*padding-top: 80px;*!*/
+    /*background-color: #7ba969;*/
+    /*-webkit-background-size: cover;*/
+    /*-moz-background-size: cover;*/
+    /*-o-background-size: cover;*/
+    /*background-size: cover;*/
+    /*height: 100%;*/
+    /*overflow-y: auto;*/
+}
+
+
+.navbar-res-width{
+    width:60%;
+}
+
+
+main {
+    display : flex;
+    flex-flow : row wrap;
+}
+.min {
+    min-height : 150px;
+    min-width : 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:30px;
+}
+
+div.iconsection{
+    text-shadow: 4px 6px 3px rgba(3, 46, 92, 0.3);
+    /*margin: 10px;*/
+    transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+
+
+}
+
+
+div.innersection {
+    margin: 10px;
+    transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+}
+div.topinnersection {
+    /*background-color: white;*/
+    box-shadow: 2px 3px 3px 2px rgba(3, 46, 92, 0.3);
+    /*border-color: white;*/
+    /*border-width: 1px;*/
+    /*border-style: solid;*/
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+
+div.iconsection:hover{
+    font-size:110%;
+    padding-top:0;
+}
+.max1{
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+}
+#block1 {
+    flex-basis : 60%;
+}
+#block2 {
+    flex-basis : 40%;
+}
+#block3 {
+    flex-basis : 33.33%;
+    font-size: 50px;
+}
+#block4 {
+    flex-basis : 33.33%;
+    font-size: 50px;
+}
+#block5 {
+    flex-basis : 33.33%;
+    font-size: 50px;
+}
+@media (max-width : 1000px) {
+    #block1{
+        flex-basis : 100%;
+    }
+    #block2, #block3, #block4, #block5{
+        flex-basis : 50%;
+    }
+    #block3, #block4, #block5{
+        font-size : 40px;
+    }
+
+    .navbar-res-width{
+        width:95%;
+    }
+
+
+    /* Do not hover-animate when on tablet/phone res*/
+    div.iconsection:hover{
+        font-size:100%;
+        padding-top:30px;
+    }
+}
+@media (max-width : 600px) {
+
+
+    .max1{
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+    #block1,#block2,#block3,#block4,#block5 {
+        flex-basis : 100%;
+    }
+    #block3, #block4, #block5{
+        font-size: 60px;
+    }
+
+    .navbar-res-width{
+        width:95%;
+    }
+
+    /* Do not hover-animate when on tablet/phone res*/
+    div.iconsection:hover{
+        font-size:100%;
+        padding-top:30px;
+    }
+
+}
