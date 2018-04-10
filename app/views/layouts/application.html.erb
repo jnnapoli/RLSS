@@ -67,7 +67,7 @@
           </li>
 
           <li>
-            <a href="#" title="Match History">Match History</a>
+            <a href="/matches" title="Match History">Match History</a>
           </li>
 
         </ul>
@@ -77,6 +77,9 @@
   </nav>
 </div>
 
+
+<!--<p class="notice"></%= notice %></p>-->
+<!--<p class="alert"></%= alert %></p>-->
 
 <div class="container">
   <div class="container-fluid">
@@ -93,6 +96,12 @@
 
 
 </body>
+
+<ul>
+  <% if user_signed_in? %>
+  <li><%= link_to "Log out", destroy_user_session_path, :method => :delete %></li>
+  <%end%>
+</ul>
 
 
 
