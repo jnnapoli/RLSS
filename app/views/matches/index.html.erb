@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Match History</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th> Match</th>
+    <th> Winner</th>
+    <th> VOD Link</th>
+    <th>Clip of the Match</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @matches.each do |match| %>
+    <tr>
+      <td><%= match.team1 + " vs. " + match.team2 %> </td>
+      <td> hidden</td>
+      <td>
+        <a href="<%= 'https://www.twitch.tv/videos/' + match.vodID + '?t=' + (Time.at((match.match_start - match.stream_start)).utc.strftime("%Hh:%Mm:%Ss")).to_s.tr(':', '') %>" target="_blank">
+          VOD Link
+        </a>
+      </td>
+      <td> <a href="<%= match.clip %>" target="_blank"> Clip Link</a> </td>
+      <% if user_signed_in? %>
+        <td><%= link_to 'Show', match %></td>
+      <% end %>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+<% if user_signed_in? %>
+  <%= link_to 'New Match', new_match_path %>
+<% end %>
