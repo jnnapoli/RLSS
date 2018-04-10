@@ -1,7 +1,13 @@
 <!DOCTYPE html>
-<html>
 <head>
   <title>RL Scuff Series</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- latest compiled bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <%= csrf_meta_tags %>
@@ -14,7 +20,7 @@
 </head>
 
 
-<body style="background-color: #002233; font-family: 'Source Sans Pro'">
+<body style="height=100%; padding-bottom:80px; background-color: #002233; font-family: 'Source Sans Pro'">
 
 
 <div style="background-color: black; display: flex; flex-flow: row wrap;">
@@ -29,70 +35,65 @@
 
 <!--navigation-->
 
-<nav class="navbar navbar-default navbar-fixed-top" style="margin-top:180px; background-color:midnightblue">
-  <div class="container-fluid navbar-res-width">
-    <div class="navbar-header">
-      <!---->
-      <!--<a class="navbar-brand" href="/"><b>Joey Napoli</b></a>-->
+<div class="container" style="width:100%">
+  <nav class="navbar navbar-default" style="background-color:midnightblue">
+    <div class="container-fluid navbar-res-width">
+      <div class="navbar-header">
+        <!---->
+        <!--<a class="navbar-brand" href="/"><b>Joey Napoli</b></a>-->
 
-      <!--hamburger button navigation-->
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+        <!--hamburger button navigation-->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".mynavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
 
+      </div>
+
+
+      <!-- these are the navigation links wrapped in a collapsible div-->
+      <div class="collapse navbar-collapse mynavbar">
+
+        <!--the right hand navigation part-->
+        <ul class="nav navbar-nav">
+
+          <li>
+            <a href="https://www.twitch.tv/dheg" target="_blank" title="Dheg's Stream">Dheg on Twitch</a>
+          </li>
+
+          <li>
+            <a href="#" title="Top Clips">Top Clips</a>
+          </li>
+
+          <li>
+            <a href="#" title="Match History">Match History</a>
+          </li>
+
+        </ul>
+
+      </div>
     </div>
+  </nav>
+</div>
 
 
-    <!-- these are the navigation links wrapped in a collapsible div-->
-    <div class="collapse navbar-collapse" id="mynavbar">
-
-      <!--the right hand navigation part-->
-      <ul class="nav navbar-nav navbar-right">
-
-        <li>
-          <a href="https://www.twitch.tv/dheg" target="_blank" title="Dheg's Stream">Dheg on Twitch</a>
-        </li>
-
-        <li>
-          <a  href="#" title="Top Clips">Top Clips</a>
-        </li>
-
-        <li>
-          <a href="#" title="Match History">Match History</a>
-        </li>
-
-      </ul>
-
+<div class="container">
+  <div class="container-fluid">
+    <div style="width=100%; display: flex; flex-flow: row wrap; margin-top:100px">
+      <div style="flex-basis: 10%"></div>
+      <div style="flex-basis: 80%">
+        <div style="display:block; margin:auto;"> <%= yield %> </div>
+      </div>
     </div>
-  </div>
-</nav>
-
-<div style="width=100%; display: flex; flex-flow: row wrap; margin-top:100px">
-  <div style="flex-basis: 10%"></div>
-  <div style="flex-basis: 60%">
-    <div style="width=100%; display:block; margin:auto;"> <%= yield %> </div>
-  </div>
-
-  <div style="flex-basis: 30%"> <div style="display:block; margin:auto;">
-
-    <iframe frameborder="0"
-            scrolling="yes"
-            id="chat_embed"
-            src="http://www.twitch.tv/embed/dheg/chat"
-            height="500"
-            width="350">
-    </iframe>
-     </div>
+    <div style="flex-basis: 10%"></div>
   </div>
 
 </div>
 
 
-<!-- jquery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-
-
 </body>
+
+
+
 </html>
