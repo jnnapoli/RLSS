@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-  # get 'users/sign_up' => redirect('404.html')
+  get 'users/sign_up' => redirect('404.html')
 
 
   devise_for :users
