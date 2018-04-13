@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :clips
   #  Remove Commented out line below to activate registration
   # get 'users/sign_up' => redirect('404.html')
 
