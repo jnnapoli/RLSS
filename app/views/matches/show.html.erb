@@ -16,8 +16,8 @@
 </p>
 
 <p>
-  <strong>Vodid:</strong>
-  <%= @match.vodID %>
+  <strong>VOD_id:</strong>
+  <%= @match.vod_id %>
 </p>
 
 <p>
@@ -31,8 +31,8 @@
 </p>
 
 <p>
-  <strong>Vod start:</strong>
-  <a href="<%= 'https://www.twitch.tv/videos/' + @match.vodID + '?t=' + (Time.at((@match.match_start - @match.stream_start)).utc.strftime("%Hh:%Mm:%Ss")).to_s.tr(':', '') %>" target="_blank"> VOD Link </a>
+  <strong>VOD start:</strong>
+  <a href="<%= 'https://www.twitch.tv/videos/' + @match.vod_id + '?t=' + (Time.at((@match.match_start - @match.stream_start)).utc.strftime("%Hh:%Mm:%Ss")).to_s.tr(':', '') %>" target="_blank"> VOD Link </a>
 </p>
 
 <p>

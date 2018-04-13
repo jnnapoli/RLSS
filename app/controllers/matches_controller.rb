@@ -5,7 +5,7 @@ class MatchesController < ApplicationController
   # GET /matches
   # GET /matches.json
   def index
-    @matches = Match.all
+    @matches = Match.all.reverse
   end
 
   # GET /matches/1
@@ -17,11 +17,11 @@ class MatchesController < ApplicationController
   def new
     @match = Match.new
     @schedule = Schedule.order("created_at").last
-    #@start_time = Schedule.order("created_at").last.start_time
   end
 
   # GET /matches/1/edit
   def edit
+    @schedule = @match
   end
 
   # POST /matches
@@ -72,6 +72,6 @@ class MatchesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def match_params
-      params.require(:match).permit(:title, :team1, :team2, :vodID, :stream_start, :match_start, :vod_start, :clip)
+      params.require(:match).permit(:title, :team1, :team2, :vod_id, :stream_start, :match_start, :vod_start, :clip)
     end
 end

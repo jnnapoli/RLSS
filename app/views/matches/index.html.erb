@@ -3,6 +3,7 @@
 <table>
   <thead>
   <tr>
+    <th> Match Start</th>
     <th> Match</th>
     <th> Winner</th>
     <th> VOD Link</th>
@@ -14,16 +15,20 @@
   <tbody>
   <% @matches.each do |match| %>
     <tr>
+      <td><%= match.match_start.strftime("%m/%d/%Y - %I:%M%p")%></td>
       <td><%= match.team1 + " vs. " + match.team2 %> </td>
-      <td> hidden</td>
+      <td> TBD</td>
       <td>
-        <a href="<%= 'https://www.twitch.tv/videos/' + match.vodID + '?t=' + (Time.at((match.match_start - match.stream_start)).utc.strftime("%Hh:%Mm:%Ss")).to_s.tr(':', '') %>" target="_blank">
+        <a href="<%= 'https://www.twitch.tv/videos/' + match.vod_id + '?t=' + (Time.at((match.match_start - match.stream_start)).utc.strftime("%Hh:%Mm:%Ss")).to_s.tr(':', '') %>" target="_blank">
           VOD Link
         </a>
       </td>
       <td> <a href="<%= match.clip %>" target="_blank"> Clip Link</a> </td>
       <% if user_signed_in? %>
         <td><%= link_to 'Show', match %></td>
+        <td><%= link_to 'Edit', edit_match_path(match) %></td>
+        <td><%= link_to 'Destroy', match, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
       <% end %>
     </tr>
   <% end %>
