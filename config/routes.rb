@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
 
-
-  get 'users/sign_up' => redirect('404.html')
+  #  Remove Commented out line below to activate registration
+  # get 'users/sign_up' => redirect('404.html')
 
 
   devise_for :users
 
   root 'welcome#index'
+  
+  
 
   resources :matches
 
