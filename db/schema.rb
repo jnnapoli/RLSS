@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180410182648) do
+ActiveRecord::Schema.define(version: 20180413145625) do
+
+  create_table "clips", force: :cascade do |t|
+    t.string   "title"
+    t.string   "player"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "matches", force: :cascade do |t|
     t.string   "title"
@@ -23,6 +30,14 @@ ActiveRecord::Schema.define(version: 20180410182648) do
     t.string   "clip"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "schedules", force: :cascade do |t|
+    t.string   "event"
+    t.datetime "date"
+    t.string   "details"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

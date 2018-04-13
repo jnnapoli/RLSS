@@ -1,17 +1,20 @@
 Rails.application.routes.draw do
+  
+  
+  root 'welcome#index'
 
-  resources :clips
   #  Remove Commented out line below to activate registration
   # get 'users/sign_up' => redirect('404.html')
-
-
+  
+  get '/schedule', to: 'schedules#index', as: 'schedule'
+  resources :schedules
+  resources :matches
+  resources :clips
   devise_for :users
 
-  root 'welcome#index'
   
   
 
-  resources :matches
 
 
 
