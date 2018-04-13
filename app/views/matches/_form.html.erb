@@ -25,15 +25,17 @@
     <%= f.label :team2 %>
     <div class="myinput"> <%= f.text_field :team2 %>
   </div>
+  
+  
 
   <div class="field">
     <%= f.label :vodID %>
-    <div class="myinput"><%= f.text_field :vodID %>
+    <div class="myinput"><%= f.text_field :vodID, :value => @schedule.vod_id %>
   </div>
 
   <div class="field">
     <%= f.label :stream_start %>
-    <div class="myinput"> <%= f.datetime_select :stream_start %>
+    <div class="myinput"> <%= f.text_field :stream_start, :value => @schedule.created_at %>
   </div>
 
   <div class="field">

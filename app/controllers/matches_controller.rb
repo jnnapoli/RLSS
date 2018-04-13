@@ -16,6 +16,8 @@ class MatchesController < ApplicationController
   # GET /matches/new
   def new
     @match = Match.new
+    @schedule = Schedule.order("created_at").last
+    #@start_time = Schedule.order("created_at").last.start_time
   end
 
   # GET /matches/1/edit
