@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   
   root 'welcome#index'
 
-  #  Remove Commented out line below to activate registration
-  # get 'users/sign_up' => redirect('404.html')
+  #  Remove Commented out line below to DE-activate registration
+  get 'users/sign_up' => redirect('404.html')
   
   #get '/schedule', to: 'schedules#index', as: 'schedule'
   resources :schedules
