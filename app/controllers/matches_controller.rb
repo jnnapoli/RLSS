@@ -72,6 +72,6 @@ class MatchesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def match_params
-      params.require(:match).permit(:title, :team1, :team2, :vod_id, :stream_start, :match_start, :vod_start, :clip)
+      params.require(:match).permit(:title, :team1, :team2, :match_start, :vod_start, :clip, :vod_id, :stream_start)
     end
 end
