@@ -1,5 +1,10 @@
 <h1>Match History</h1>
 
+
+<% if user_signed_in? %>
+  <%= link_to 'New Match', new_match_path %>
+<% end %>
+
 <table>
   <thead>
   <tr>
