@@ -22,13 +22,44 @@
     <tr>
       <td><%= match.match_start.strftime("%m/%d/%Y - %I:%M%p")%></td>
       <td><%= match.team1 + " vs. " + match.team2 %> </td>
-      <td> TBD</td>
+      
+      <td> 
+        <% if match.winner.present? %>
+          <% match.winner %>
+        <% else %>
+         TBD
+        <% end %>
+      </td>
+      
       <td>
         <a href="<%= 'https://www.twitch.tv/videos/' + match.vod_id + '?t=' + (Time.at((match.match_start - match.stream_start)).utc.strftime("%Hh:%Mm:%Ss")).to_s.tr(':', '') %>" target="_blank">
           VOD Link
         </a>
       </td>
-      <td> <a href="<%= match.clip %>" target="_blank"> Clip Link</a> </td>
+      
+      
+      
+      
+      
+      <td> 
+      <% if match.clip.present? %>
+      
+      <a href="<%= match.clip %>" target="_blank"> Clip </a>
+      
+      <% else %>
+      
+      <a href="mailto:clips@scuffesports.com?subject=<%= match.match_start.strftime("%m/%d/%Y - %I:%M%p")%> | <%= match.team1 + " vs. " + match.team2 %> | Clip of the Game Submission"> Submit Clip</a>
+      
+      <% end %>
+      
+      
+      </td>
+      
+      
+      
+      
+      
+      
       <% if user_signed_in? %>
         <td><%= link_to 'Show', match %></td>
         <td><%= link_to 'Edit', edit_match_path(match) %></td>

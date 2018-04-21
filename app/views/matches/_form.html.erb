@@ -11,10 +11,10 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %>
-    <div class="myinput"><%= f.text_field :title %></div>
-  </div>
+  <!--<div class="field">-->
+  <!--  <#%= f.label :title %>-->
+  <!--  <div class="myinput"><#%= f.text_field :title %></div>-->
+  <!--</div>-->
 
   <div class="field">
     <%= f.label :team1 %>
@@ -27,6 +27,18 @@
   </div>
   
   
+  <div class="field">
+    <%= f.label :winner %>
+    <div class="myinput"> <%= f.text_field :winner %>
+  </div>
+  
+  
+  <div class="field">
+    <%= f.label :clip %>
+    <div class="myinput"> <%= f.text_field :clip %>
+  </div>
+  
+  
 
   <div class="field">
     <%= f.label :vod_id %>
@@ -35,7 +47,7 @@
 
   <div class="field">
     <%= f.label :stream_start %>
-    <div class="myinput"> <%= f.text_field :stream_start, :value => @schedule.start_time %>
+    <div class="myinput"> <%= f.text_field :stream_start, :value => @schedule.stream_start %>
   </div>
 
   <div class="field">

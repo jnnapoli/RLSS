@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180413160922) do
+ActiveRecord::Schema.define(version: 20180421170738) do
 
   create_table "clips", force: :cascade do |t|
     t.string   "title"
@@ -30,16 +30,17 @@ ActiveRecord::Schema.define(version: 20180413160922) do
     t.string   "clip"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.string   "winner"
   end
 
   create_table "schedules", force: :cascade do |t|
     t.string   "event"
     t.datetime "date"
     t.string   "details"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.string   "vod_id"
-    t.datetime "start_time"
+    t.datetime "stream_start"
   end
 
   create_table "users", force: :cascade do |t|
