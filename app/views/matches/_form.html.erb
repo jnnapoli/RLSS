@@ -1,4 +1,4 @@
-<%= form_for match, validate: true do |f| %>
+<%= form_for(match) do |f| %>
   <% if match.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(match.errors.count, "error") %> prohibited this match from being saved:</h2>
@@ -18,12 +18,12 @@
 
   <div class="field">
     <%= f.label :team1 %>
-    <div class="myinput"> <%= f.text_field :team1, :required => 'required'%>
+    <div class="myinput"> <%= f.text_field :team1, :required => 'true' %>
   </div>
 
   <div class="field">
     <%= f.label :team2 %>
-    <div class="myinput"> <%= f.text_field :team2, :required => 'required' %>
+    <div class="myinput"> <%= f.text_field :team2, :required => 'true' %>
   </div>
   
   <div class="field">
