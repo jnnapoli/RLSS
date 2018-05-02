@@ -1,15 +1,53 @@
-<h1>Clips</h1>
+<div style="Text-align: center">
 
-<h2>This page is a W.I.P.  Thank you for your patience.</h2>
+<h1>Clip of the Week!</h1>
 
-<iframe
-   src="https://clips.twitch.tv/BoredObeseCroissantDAESuppy"
-   height="450"
-   width="700"
-   frameborder="0"
-   scrolling="no"
-   allowfullscreen="true">
-</iframe>
+<h4>Most viewed clip of the week.</h4>
+
+<!--<iframe-->
+<!--   src="https://clips.twitch.tv/BoredObeseCroissantDAESuppy"-->
+<!--   height="450"-->
+<!--   width="700"-->
+<!--   frameborder="0"-->
+<!--   scrolling="no"-->
+<!--   allowfullscreen="true">-->
+<!--</iframe>-->
+
+
+
+   <div id="clips-display"></div>
+</body>
+
+</div>
+
+<script type="text/javascript">
+
+var httpRequest = new XMLHttpRequest();
+
+httpRequest.addEventListener('load', clipsLoaded);
+httpRequest.open('GET', 'https://api.twitch.tv/kraken/clips/top?limit=1&channel=dheg');
+httpRequest.setRequestHeader('Client-ID', 'fsf1bi7if4hm3gjn0kgysttgv1qb73');
+httpRequest.setRequestHeader('Accept', 'application/vnd.twitchtv.v5+json');
+httpRequest.send();
+
+
+function clipsLoaded() {
+    var clipsDisplay = document.getElementById('clips-display'),
+        clipList = JSON.parse(httpRequest.responseText);
+
+    clipList.clips.forEach(function(clip, index, array) {
+        clipItem = document.createElement('div');
+        clipItem.innerHTML = clip.embed_html;
+        clipsDisplay.appendChild(clipItem);
+        clipsDisplay.type = "hidden";
+    });
+}
+
+</script>
+
+
+
+
 
   <% if user_signed_in? %>
 <table>
