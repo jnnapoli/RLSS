@@ -1,0 +1,200 @@
+html {
+    height: 100%;
+    /*overflow: hidden;*/
+}
+
+
+body {
+    padding: 0;
+    margin: 0;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar-res-width {
+    width: 100%;
+}
+
+main {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+
+
+@media (max-width: 1000px) {
+
+    .navbar-res-width {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .navbar-res-width {
+        width: 100%;
+    }
+
+
+}
+
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+}
+/* line 5, /home/passenger/rlss/RLSS/app/assets/stylesheets/matches.scss */
+table {
+  width: 100%;
+  text-align: center;
+}
+
+/* line 10, /home/passenger/rlss/RLSS/app/assets/stylesheets/matches.scss */
+table, th, td {
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+/* line 16, /home/passenger/rlss/RLSS/app/assets/stylesheets/matches.scss */
+th {
+  font-size: 120%;
+  height: 50px;
+}
+
+/* line 22, /home/passenger/rlss/RLSS/app/assets/stylesheets/matches.scss */
+td {
+  margin-inside: 5px;
+  height: 35px;
+}
+
+/* line 28, /home/passenger/rlss/RLSS/app/assets/stylesheets/matches.scss */
+tr:nth-child(even) {
+  background-color: midnightblue;
+}
+/* line 1, /home/passenger/rlss/RLSS/app/assets/stylesheets/scaffolds.scss */
+body {
+  background-color: #fff;
+  color: #eee;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  margin: 33px;
+}
+
+/* line 10, /home/passenger/rlss/RLSS/app/assets/stylesheets/scaffolds.scss */
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  margin: 33px;
+}
+
+/* line 18, /home/passenger/rlss/RLSS/app/assets/stylesheets/scaffolds.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 31, /home/passenger/rlss/RLSS/app/assets/stylesheets/scaffolds.scss */
+a:hover {
+  color: #fff;
+}
+
+/* line 36, /home/passenger/rlss/RLSS/app/assets/stylesheets/scaffolds.scss */
+th {
+  padding-bottom: 5px;
+}
+
+/* line 40, /home/passenger/rlss/RLSS/app/assets/stylesheets/scaffolds.scss */
+td {
+  padding-bottom: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/* line 47, /home/passenger/rlss/RLSS/app/assets/stylesheets/scaffolds.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 52, /home/passenger/rlss/RLSS/app/assets/stylesheets/scaffolds.scss */
+#notice {
+  color: green;
+}
+
+/* line 56, /home/passenger/rlss/RLSS/app/assets/stylesheets/scaffolds.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 62, /home/passenger/rlss/RLSS/app/assets/stylesheets/scaffolds.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 70, /home/passenger/rlss/RLSS/app/assets/stylesheets/scaffolds.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 81, /home/passenger/rlss/RLSS/app/assets/stylesheets/scaffolds.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+/* line 87, /home/passenger/rlss/RLSS/app/assets/stylesheets/scaffolds.scss */
+label {
+  display: block;
+  color: #eee;
+}
+
+/* line 92, /home/passenger/rlss/RLSS/app/assets/stylesheets/scaffolds.scss */
+.actions {
+  color: #111;
+}
+
+/* line 97, /home/passenger/rlss/RLSS/app/assets/stylesheets/scaffolds.scss */
+.field {
+  color: #eee;
+}
+
+/* line 101, /home/passenger/rlss/RLSS/app/assets/stylesheets/scaffolds.scss */
+.myinput {
+  color: #111;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+
+ */
+
