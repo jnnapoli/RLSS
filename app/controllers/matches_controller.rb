@@ -1,3 +1,8 @@
+require 'net/http'
+require 'uri'
+require 'json'
+
+
 class MatchesController < ApplicationController
   before_action :set_match, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!, only: [:new, :edit, :update, :destroy]
@@ -16,12 +21,81 @@ class MatchesController < ApplicationController
   # GET /matches/new
   def new
     @match = Match.new
-    @schedule = Schedule.order("created_at").last
+    
+    
+    #HTTP Request to get appropriate VOD url and start time
+    vod_url = ''
+    stream_start = ''
+
+    uri = URI.parse("https://api.twitch.tv/kraken/channels/166362542/videos?limit=1&broadcast_type=archive")
+    request = Net::HTTP::Get.new(uri)
+    request["Accept"] = "application/vnd.twitchtv.v5+json"
+    request["Client-Id"] = "fsf1bi7if4hm3gjn0kgysttgv1qb73"
+
+    req_options = {
+      use_ssl: uri.scheme == "https",
+    }
+
+    response = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
+      http.request(request)
+    end
+
+    puts response.code
+
+    response_json = response.body
+
+    response_hash= JSON.parse(response_json)
+
+    response_hash["videos"].each do |videos|
+      vod_url = videos["url"].to_s
+      stream_start = videos["created_at"].to_s
+    end
+
+
+    latest_vod = vod_url
+    
+    
+    
+    @stream_start = DateTime.iso8601(stream_start)
+    
+    @match_start = DateTime.now
+    
+    @difference = (@match_start.to_time - @stream_start.to_time)
+    
+    @difference = Time.at(@difference).utc.strftime("%Hh%Mm%Ss")
+    
+    @vod_url = latest_vod + "?t=" + @difference
+    
+    
+    
+    
+    
+   # @difference = ((Time.parse(@match_start.to_s) - Time.parse(@stream_start.to_s))/3600).to_s.utc.strftime("%Hh:%Mm:%Ss")
+
+  
+    
+    
+    
+    
   end
+
+
+
+
+
+
+
+
+
+
 
   # GET /matches/1/edit
   def edit
-    @schedule = @match
+   
+    @vod_url = @match.vod_url
+    @match_start = @match.match_start
+    
+    
   end
 
   # POST /matches
@@ -72,6 +146,6 @@ class MatchesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def match_params
-      params.require(:match).permit(:title, :team1, :team2, :match_start, :vod_start, :clip, :vod_id, :stream_start, :winner)
+      params.require(:match).permit(:title, :team1, :team2, :match_start, :vod_start, :clip, :winner, :vod_url)
     end
 end

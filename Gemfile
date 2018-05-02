@@ -51,3 +51,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #adding devise to limit logins
 gem 'devise'
+
+
+gem 'client_side_validations'

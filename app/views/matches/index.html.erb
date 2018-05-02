@@ -3,10 +3,7 @@
 
 <% if user_signed_in? %>
   <%= link_to 'New Match', new_match_path %>
-  
-  ||
-  
-     <a href="/schedules" title="Schedule">Schedule</a>
+ 
 <% end %>
 
 <table>
@@ -31,12 +28,13 @@
         <% if match.winner.present? %>
           <%= match.winner %>
         <% else %>
+        
          TBD
         <% end %>
       </td>
       
       <td>
-        <a href="<%= 'https://www.twitch.tv/videos/' + match.vod_id + '?t=' + (Time.at((match.match_start - match.stream_start)).utc.strftime("%Hh:%Mm:%Ss")).to_s.tr(':', '') %>" target="_blank">
+        <a href="<%= match.vod_url %>" target="_blank">
           VOD Link
         </a>
       </td>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180421170738) do
+ActiveRecord::Schema.define(version: 20180502155053) do
 
   create_table "clips", force: :cascade do |t|
     t.string   "title"
@@ -23,14 +23,13 @@ ActiveRecord::Schema.define(version: 20180421170738) do
     t.string   "title"
     t.string   "team1"
     t.string   "team2"
-    t.string   "vod_id"
-    t.datetime "stream_start"
     t.datetime "match_start"
     t.datetime "vod_start"
     t.string   "clip"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "winner"
+    t.string   "vod_url"
   end
 
   create_table "schedules", force: :cascade do |t|
