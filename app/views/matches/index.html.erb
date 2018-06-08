@@ -22,11 +22,11 @@
   <% @matches.each do |match| %>
     <tr>
       <td><%= match.match_start.strftime("%m/%d/%Y - %I:%M%p")%></td>
-      <td><%= match.team1 + " vs. " + match.team2 %> </td>
+      <td><%= match.team1.upcase + " vs. " + match.team2.upcase %> </td>
       
       <td> 
         <% if match.winner.present? %>
-          <%= match.winner %>
+          <%= match.winner.upcase %>
         <% else %>
         
          TBD
