@@ -1,7 +1,10 @@
-<p id="notice"><%= notice %></p>
-<h2>YEP!!!!</h2>
-
-<% @team.to_s %>
+<script>
+    function reload(){
+        location.href=location.href
+    }
+    setInterval('reload()',5000)
+</script>
+<%= @team %>
 
 <!--<p>-->
 <!--  <strong>Title:</strong>-->

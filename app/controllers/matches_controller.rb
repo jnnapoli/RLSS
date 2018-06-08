@@ -12,20 +12,20 @@ class MatchesController < ApplicationController
   def index
     @matches = Match.where('match_start > ?', DateTime.new(2018, 5, 1)).reverse
   end
-  
+
   # GET matches/recent1
   # GET /matches.json
   def recent1
     @team = Match.last.team1
-    render :text => "#{@team}"
+    render layout: false
   end
-  
-    # GET matches/recent2
+
+  # GET matches/recent2
   # GET /matches.json
   def recent2
     @team = Match.last.team2
-    render :text => "#{@team}"
-    
+    render layout: false
+
   end
 
   # GET /matches/1
