@@ -3,8 +3,20 @@ Rails.application.routes.draw do
   
   root 'welcome#index'
 
-  #  Remove Commented out line below to DE-activate registration
+  #  ACTIVATE REGISTRATION BY COMMENTING THIS OUT
   get 'users/sign_up' => redirect('404.html')
+  
+  
+  
+  
+  
+  get 'matches/recent1', action: :recent1, controller: 'matches'
+
+  
+  get 'matches/recent2', action: :recent2, controller: 'matches'
+  
+
+  
   
   #get '/schedule', to: 'schedules#index', as: 'schedule'
   resources :schedules

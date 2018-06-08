@@ -1,0 +1,90 @@
+<p id="notice"><%= notice %></p>
+<h2>YEP
+
+<%= @team.team1 %>
+
+
+!!!!</h2>
+<!--<p>-->
+<!--  <strong>Title:</strong>-->
+<!--  <#%= @match.title %>-->
+<!--</p>-->
+
+
+
+<!--<p>-->
+<!--  <strong>Team1:</strong>-->
+<!--  <#%= @match.team1 %>-->
+<!--</p>-->
+
+<!--<p>-->
+<!--  <strong>Team2:</strong>-->
+<!--  <#%= @match.team2 %>-->
+<!--</p>-->
+
+
+<!--<h3>-->
+<!--  <strong>Match-Up: </strong>-->
+
+<!--<#%= link_to @match.team1, match_path(@match, match: {winner: @match.team1}) , method: :put, data: { confirm: @match.team1 + " won?"} %>-->
+
+<!--vs-->
+
+<!--<#%= link_to @match.team2, match_path(@match, match: {winner: @match.team2}) , method: :put, data: { confirm:  @match.team2 + " won?"} %>-->
+
+<!--</h3>-->
+<!--Click the team above to set the winner.-->
+
+<!--<h3>-->
+<!--  <strong>Winner:</strong>-->
+<!--  <#%= @match.winner %>-->
+<!--</h3>-->
+
+
+
+
+
+<!--<h3>-->
+<!--  <strong>VOD:</strong>-->
+<!--  <a href="<#%= @match.vod_url %>" target="_blank"> VOD Link</a>-->
+<!--</h3>-->
+
+
+
+<!--<p>-->
+<!--  <strong>VOD_id:</strong>-->
+<!--  <#%= @match.vod_id %>-->
+<!--</p>-->
+
+<!--<p>-->
+<!--  <strong>Stream start:</strong>-->
+<!--  <#%= @match.stream_start %>-->
+<!--</p>-->
+
+<!--<p>-->
+<!--  <strong>Match start:</strong>-->
+<!--  <#%= @match.match_start %>-->
+<!--</p>-->
+
+
+
+<!--<p>-->
+<!--  <strong>VOD start:</strong>-->
+<!--  <a href="<#%= 'https://www.twitch.tv/videos/' + @match.vod_id + '?t=' + (Time.at((@match.match_start - @match.stream_start)).utc.strftime("%Hh:%Mm:%Ss")).to_s.tr(':', '') %>" target="_blank"> VOD Link </a>-->
+<!--</p>-->
+
+<!--<h3>-->
+<!--  <strong>Clip:</strong>-->
+<!--  <#%= @match.clip %>-->
+<!--</h3>-->
+<!--</br>-->
+<!--</br>-->
+<!--</br>-->
+<!--<#%= link_to 'Edit', edit_match_path(@match) %>   |  -->
+<!--<#%= link_to 'Back', matches_path %>-->
+
+<!--|  -->
+
+<!--<#% if user_signed_in? %>-->
+<!--  <#%= link_to 'New Match', new_match_path %>-->
+<!--<#% end %>-->
