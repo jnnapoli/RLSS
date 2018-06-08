@@ -16,14 +16,14 @@ class MatchesController < ApplicationController
   # GET matches/recent1
   # GET /matches.json
   def recent1
-    @team = Match.first.team1
+    @team = Match.last.team1
     render :text => "#{@team}"
   end
   
     # GET matches/recent2
   # GET /matches.json
   def recent2
-    @team = Match.first.team2
+    @team = Match.last.team2
     render :text => "#{@team}"
     
   end
