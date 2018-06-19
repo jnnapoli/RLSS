@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   #  ACTIVATE REGISTRATION BY COMMENTING THIS OUT
-  #get 'users/sign_up' => redirect('404.html')
+  get 'users/sign_up' => redirect('404.html')
   
   
   
