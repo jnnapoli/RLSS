@@ -54,3 +54,5 @@ gem 'devise'
 
 
 gem 'client_side_validations'
+
+gem 'will_paginate'

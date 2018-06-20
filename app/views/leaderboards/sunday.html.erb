@@ -1,0 +1,69 @@
+<h1 style="Text-Align: Center;">Monthly Leaderboards (Sunday)</h1>
+
+
+
+<div style="text-align: center"> <%= will_paginate @leaderboards, :previous_label => ' &#8592; Prev'%></div>
+<div style="text-align: center; color:black">
+
+  <%= link_to "<button style='color:black'>Sunday</button>".html_safe, "/leaderboards/sunday" %>
+
+  <%= link_to "<button style='color:black'>Wednesday</button>".html_safe, "/leaderboards/wednesday" %>
+
+  <%= link_to "<button style='color:black'>Friday</button>".html_safe, "/leaderboards/friday" %>
+  &nbsp; &nbsp; &nbsp; &nbsp;
+  <%= link_to "<button style='color:black'>Overall</button>".html_safe, "/leaderboards/" %>
+
+</div>
+
+<% increment = 0 %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Team</th>
+      <th>Sunday Points</th>
+      <th>Sunday Wins</th>
+      <th>Sunday 2nds</th>
+      <th>Sunday Semis</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @leaderboards.each do |leaderboard| %>
+      <tr>
+        <td> <%= increment=increment+1 %></td>
+        <td><%= leaderboard.team %></td>
+        <td><%= leaderboard.sun_points %></td>
+
+        <td><%= leaderboard.sunday_wins %></td>
+
+        <td><%= leaderboard.sunday_2nds %></td>
+
+        <td><%= leaderboard.sunday_semis %></td>
+
+
+        <% if user_signed_in? %>
+        <td><%= link_to 'Show', leaderboard %></td>
+        <td><%= link_to 'Edit', edit_leaderboard_path(leaderboard) %></td>
+        <td><%= link_to 'Destroy', leaderboard, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div style="text-align: center"> <%= will_paginate @leaderboards, :previous_label => ' &#8592; Prev'%></div>
+<br>
+
+
+<% if user_signed_in? %>
+  <%= link_to "<button style='color:black'>Create New Team</button>".html_safe, "/leaderboards/new" %>
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+  <%= link_to "<button style='color:black'>Create New Bracket</button>".html_safe, "/brackets/new" %>
+
+<% end %>

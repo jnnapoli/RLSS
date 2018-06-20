@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  champs: MyString
+  runnerup: MyString
+  semi1: MyString
+  semi2: MyString
+  semi3: MyString
+  semi4: MyString
+
+two:
+  champs: MyString
+  runnerup: MyString
+  semi1: MyString
+  semi2: MyString
+  semi3: MyString
+  semi4: MyString

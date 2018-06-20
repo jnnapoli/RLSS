@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  
+
   root 'welcome#index'
 
   #  ACTIVATE REGISTRATION BY COMMENTING THIS OUT
@@ -16,12 +16,27 @@ Rails.application.routes.draw do
   get 'matches/recent2', action: :recent2, controller: 'matches'
   
 
-  
+  get 'brackets/:id/reward_sun', action: :reward_sun, controller: 'brackets'
+
+  get 'brackets/:id/reward_wed', action: :reward_wed, controller: 'brackets'
+
+  get 'brackets/:id/reward_fri', action: :reward_fri, controller: 'brackets'
+
+
+
+  get 'leaderboards/sunday', action: :sunday, controller: 'leaderboards'
+
+  get 'leaderboards/wednesday', action: :wednesday, controller: 'leaderboards'
+
+  get 'leaderboards/friday', action: :friday, controller: 'leaderboards'
   
   #get '/schedule', to: 'schedules#index', as: 'schedule'
   resources :schedules
   resources :matches
   resources :clips
+
+  resources :brackets
+  resources :leaderboards
   devise_for :users
 
   

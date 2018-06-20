@@ -1,6 +1,7 @@
 require 'net/http'
 require 'uri'
 require 'json'
+require 'will_paginate/array'
 
 
 class MatchesController < ApplicationController
@@ -10,7 +11,8 @@ class MatchesController < ApplicationController
   # GET /matches
   # GET /matches.json
   def index
-    @matches = Match.where('match_start > ?', DateTime.new(2018, 5, 1)).reverse
+    @matches = Match.where('match_start > ?', DateTime.new(2018, 5, 1)).reverse.paginate(:page => params[:page], :per_page => 10)
+    #@matches = Match.paginate(:page => params[:page], :per_page => 3)
   end
 
   # GET matches/recent1

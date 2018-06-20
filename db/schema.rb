@@ -10,13 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180502155053) do
+ActiveRecord::Schema.define(version: 20180620033809) do
+
+  create_table "brackets", force: :cascade do |t|
+    t.string   "champs"
+    t.string   "runnerup"
+    t.string   "semi1"
+    t.string   "semi2"
+    t.string   "semi3"
+    t.string   "semi4"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "clips", force: :cascade do |t|
     t.string   "title"
     t.string   "player"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "leaderboards", force: :cascade do |t|
+    t.string   "team"
+    t.integer  "sun_points",      default: 0
+    t.integer  "wed_points",      default: 0
+    t.integer  "fri_points",      default: 0
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.integer  "tourney_wins",    default: 0
+    t.integer  "tourney_2nds",    default: 0
+    t.integer  "tourney_semis",   default: 0
+    t.integer  "sunday_wins",     default: 0
+    t.integer  "sunday_2nds",     default: 0
+    t.integer  "sunday_semis",    default: 0
+    t.integer  "wednesday_wins",  default: 0
+    t.integer  "wednesday_2nds",  default: 0
+    t.integer  "wednesday_semis", default: 0
+    t.integer  "friday_wins",     default: 0
+    t.integer  "friday_2nds",     default: 0
+    t.integer  "friday_semis",    default: 0
+    t.index ["team"], name: "index_leaderboards_on_team", unique: true
   end
 
   create_table "matches", force: :cascade do |t|

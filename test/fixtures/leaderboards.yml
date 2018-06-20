@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  team: MyString
+  sun_points: 
+  wed_points: 
+  fri_points: 
+
+two:
+  team: MyString
+  sun_points: 
+  wed_points: 
+  fri_points: 

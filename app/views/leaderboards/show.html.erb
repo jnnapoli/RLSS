@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Team:</strong>
+  <%= @leaderboard.team %>
+</p>
+
+<p>
+  <strong>Sun points:</strong>
+  <%= @leaderboard.sun_points %>
+</p>
+
+<p>
+  <strong>Wed points:</strong>
+  <%= @leaderboard.wed_points %>
+</p>
+
+<p>
+  <strong>Fri points:</strong>
+  <%= @leaderboard.fri_points %>
+</p>
+
+<%= link_to 'Edit', edit_leaderboard_path(@leaderboard) %> |
+<%= link_to 'Back', leaderboards_path %>
+
+|
+
+<% if user_signed_in? %>
+  <%= link_to 'New Team', new_leaderboard_path %>
+<% end %>

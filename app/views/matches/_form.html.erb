@@ -18,29 +18,29 @@
 
   <div class="field">
     <%= f.label :team1 %>
-    <div class="myinput"> <%= f.text_field :team1, :required => 'true' %>
+    <div class="myinput"> <%= f.text_field :team1, :required => 'true' %></div>
   </div>
 
   <div class="field">
     <%= f.label :team2 %>
-    <div class="myinput"> <%= f.text_field :team2, :required => 'true' %>
+    <div class="myinput"> <%= f.text_field :team2, :required => 'true' %></div>
   </div>
   
   <div class="field">
-    <%= f.hidden_field :vod_url %>
-    <div class="myinput"> <%= f.hidden_field :vod_url, :value => @vod_url %>
+    <%= f.label :vod_url %>
+    <div class="myinput"> <%= f.text_field :vod_url, :value => @vod_url %></div>
   </div>
 
 
   <div class="field">
     <%= f.hidden_field :match_start %>
-    <div class="myinput"> <%= f.hidden_field :match_start, :value => @match_start%>
+    <div class="myinput"> <%= f.hidden_field :match_start, :value => @match_start%></div>
   </div>
 
 
 <div class="field">
     <%= f.label :clip %>
-    <div class="myinput"> <%= f.text_field :clip %>
+  <div class="myinput"> <%= f.text_field :clip %></div>
 </div>
   
   <div class="actions">

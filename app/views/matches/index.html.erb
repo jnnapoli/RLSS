@@ -2,9 +2,11 @@
 
 
 <% if user_signed_in? %>
-  <%= link_to 'New Match', new_match_path %>
- 
+  <%= link_to "<button style='color:black'>Create New Match</button>".html_safe, "/matches/new" %>
 <% end %>
+
+
+<div style="text-align: center"> <%= will_paginate @matches, :previous_label => ' &#8592; Prev' %></div>
 
 <table>
   <thead>
@@ -19,62 +21,63 @@
   </thead>
 
   <tbody>
+
   <% @matches.each do |match| %>
     <tr>
-      <td><%= match.match_start.strftime("%m/%d/%Y - %I:%M%p")%></td>
+      <td><%= match.match_start.strftime("%m/%d/%Y - %I:%M%p") %></td>
       <td><%= match.team1.upcase + " vs. " + match.team2.upcase %> </td>
-      
-      <td> 
+
+      <td>
         <% if match.winner.present? %>
           <%= match.winner.upcase %>
         <% else %>
-        
-         TBD
+
+          TBD
         <% end %>
       </td>
-      
+
       <td>
         <a href="<%= match.vod_url %>" target="_blank">
           VOD Link
         </a>
       </td>
-      
-      
-      
-      
-      
-      <td> 
-      <% if match.clip.present? %>
-      
-      <a href="<%= match.clip %>" target="_blank"> Clip </a>
-      
-      <% else %>
-      
-      <a href="mailto:clips@scuffesports.com?subject=<%= match.match_start.strftime("%m/%d/%Y - %I:%M%p")%> | <%= match.team1 + " vs. " + match.team2 %> | Clip of the Game Submission"> Submit Clip</a>
-      
-      <% end %>
-      
-      
+
+
+      <td>
+        <% if match.clip.present? %>
+
+          <a href="<%= match.clip %>" target="_blank"> Clip </a>
+
+        <% else %>
+
+          <a href="mailto:clips@scuffesports.com?subject=<%= match.match_start.strftime("%m/%d/%Y - %I:%M%p") %> | <%= match.team1 + " vs. " + match.team2 %> | Clip of the Game Submission">
+            Submit Clip</a>
+
+        <% end %>
+
+
       </td>
-      
-      
-      
-      
-      
-      
+
+
+
+
+
+
       <% if user_signed_in? %>
         <td><%= link_to 'Show', match %></td>
         <td><%= link_to 'Edit', edit_match_path(match) %></td>
-        <td><%= link_to 'Destroy', match, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', match, method: :delete, data: {confirm: 'Are you sure?'} %></td>
 
       <% end %>
     </tr>
   <% end %>
   </tbody>
+
 </table>
+
+<div style="text-align: center"> <%= will_paginate @matches, :previous_label => ' &#8592; Prev' %></div>
 <br>
 <% if user_signed_in? %>
-  <%= link_to 'New Match', new_match_path %>
+  <%= link_to "<button style='color:black'>Create New Match</button>".html_safe, "/matches/new" %>
 <% end %>
 </br></br>
-  <a href="/ArchiveMatches.html" target="_blank"> Archived Matches </a>

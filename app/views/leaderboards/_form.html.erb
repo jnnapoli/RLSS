@@ -1,0 +1,120 @@
+<%= form_for(leaderboard) do |f| %>
+  <% if leaderboard.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(leaderboard.errors.count, "error") %> prohibited this leaderboard from being saved:</h2>
+
+      <ul>
+      <% leaderboard.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :team %>
+    <div class="myinput"><%= f.text_field :team, autofocus: true  %></div>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit "Create/Update Team" %>
+  </div>
+
+  <%= link_to "<button style='color:black'>Leaderboards</button>".html_safe, "/leaderboards" %>
+  </br></br>
+
+  <%= link_to "<button style='color:black'>Create New Bracket</button>".html_safe, "/brackets/new" %>
+  </br>
+  </br>
+
+  <h3>Sunday</h3>
+  <div class="field">
+    <%= f.label :sun_points %>
+    <div class="myinput"><%= f.text_field :sun_points %></div>
+  </div>
+
+  <div class="field">
+    <%= f.label :sunday_wins %>
+    <div class="myinput"> <%= f.text_field :sunday_wins %></div>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :sunday_2nds %>
+    <div class="myinput"> <%= f.text_field :sunday_2nds %></div>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :sunday_semis %>
+    <div class="myinput"> <%= f.text_field :sunday_semis %></div>
+  </div>
+
+
+
+
+  <h3>Wednesday</h3>
+  <div class="field">
+    <%= f.label :wed_points %>
+    <div class="myinput"><%= f.text_field :wed_points%></div>
+  </div>
+
+  <div class="field">
+    <%= f.label :wednesday_wins %>
+    <div class="myinput"> <%= f.text_field :wednesday_wins %></div>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :wednesday_2nds %>
+    <div class="myinput"> <%= f.text_field :wednesday_2nds %></div>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :wednesday_semis %>
+    <div class="myinput"> <%= f.text_field :wednesday_semis %></div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h3>Friday</h3>
+  <div class="field">
+    <%= f.label :fri_points %>
+    <div class="myinput"> <%= f.text_field :fri_points %></div>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :friday_wins %>
+    <div class="myinput"> <%= f.text_field :friday_wins %></div>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :friday_2nds %>
+    <div class="myinput"> <%= f.text_field :friday_2nds %></div>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :friday_semis %>
+    <div class="myinput"> <%= f.text_field :friday_semis %></div>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Create/Update Team" %>
+  </div>
+<% end %>

@@ -1,0 +1,113 @@
+<p id="notice"><%= notice %></p>
+
+
+
+
+
+<div>
+
+
+<p>
+
+<article id="container">
+
+
+
+  <section id="semiFinals">
+    <div>
+
+
+      <p>
+        <strong>Semi1:</strong>
+        <%= @bracket.semi1 %>
+      </p>
+
+      <p>
+        <strong>Semi2:</strong>
+        <%= @bracket.semi2 %>
+      </p>
+    </div>
+      <div>
+
+
+
+
+
+        <p>
+          <strong>Semi3:</strong>
+          <%= @bracket.semi3 %>
+        </p>
+
+        <p>
+          <strong>Semi4:</strong>
+          <%= @bracket.semi4 %>
+        </p>
+
+
+      </div>
+  </section>
+
+  <div class="connecter" id="conn3">
+    <div></div>
+  </div>
+
+  <div class="line" id="line3">
+    <div></div>
+  </div>
+
+  <section id="final">
+    <div>
+
+
+
+      <p>
+        <strong>Runnerup:</strong>
+        <%= @bracket.runnerup %>
+      </p>
+
+
+
+
+    </div>
+  </section>
+
+  <section id="final">
+    <div>
+      <p>
+        <strong>Champs:</strong>
+        <%= @bracket.champs %>
+      </p>
+    </div>
+  </section>
+
+</article>
+</div>
+
+
+
+</p>
+
+
+
+
+
+
+
+
+
+<%= link_to "<button style='color:black'>Reward Sunday</button>".html_safe, :action => 'reward_sun' %>
+|
+<%= link_to "<button style='color:black'>Reward Wednesday</button>".html_safe, :action => 'reward_wed' %>
+|
+<%= link_to "<button style='color:black'>Reward Friday</button>".html_safe, :action => 'reward_fri' %>
+
+
+
+</br>
+</br>
+
+
+
+
+<%= link_to 'Edit', edit_bracket_path(@bracket) %> |
+<%= link_to 'Back', brackets_path %>

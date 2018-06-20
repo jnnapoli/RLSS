@@ -1,0 +1,105 @@
+<%= form_for(bracket) do |f| %>
+  <% if bracket.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bracket.errors.count, "error") %> prohibited this bracket from being saved:</h2>
+
+      <ul>
+      <% bracket.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% options = options_from_collection_for_select(@teams, 'team', 'team') %>
+  <article id="container">
+
+
+
+    <section id="semiFinals">
+      <div>
+        <div class="field">
+          <%= f.label :semi1 %>
+          <div class="myinput"><%= f.select :semi1,
+                                            options_from_collection_for_select(@teams, 'team', 'team', f.object.semi1) ,
+                                            :required => true,:prompt => true, :options => 'TYPE' %></div>
+        </div>
+
+        <div class="field">
+          <%= f.label :semi2 %>
+          <div class="myinput"><%= f.select :semi2,
+                                            options_from_collection_for_select(@teams, 'team', 'team', f.object.semi2) ,
+                                            :required => true,:prompt => true, :options => 'TYPE' %></div>
+        </div>
+      </div>
+
+      <div>
+
+        <div class="field">
+          <%= f.label :semi3 %>
+          <div class="myinput"><%= f.select :semi3,
+                                            options_from_collection_for_select(@teams, 'team', 'team', f.object.semi3) ,
+                                            :required => true,:prompt => true, :options => 'TYPE' %></div>
+        </div>
+
+
+        <div class="field">
+          <%= f.label :semi4 %>
+          <div class="myinput"><%= f.select :semi4,
+                                            options_from_collection_for_select(@teams, 'team', 'team', f.object.semi4) ,
+                                            :required => true,:prompt => true, :options => 'TYPE' %></div>
+        </div>
+
+
+      </div>
+    </section>
+
+    <div class="connecter" id="conn3">
+      <div></div>
+    </div>
+
+    <div class="line" id="line3">
+      <div></div>
+    </div>
+
+    <section id="final">
+      <div>
+
+
+        <div class="field">
+          <%= f.label :runnerup %>
+          <div class="myinput"><%= f.select :runnerup,
+                                            options_from_collection_for_select(@teams, 'team', 'team', f.object.runnerup) ,
+                                            :required => true,:prompt => true, :options => 'TYPE' %></div>
+        </div>
+
+
+
+
+      </div>
+    </section>
+
+    <section id="final">
+      <div>
+
+        <div class="field">
+          <%= f.label :champs %>
+          <div class="myinput"><%= f.select :champs,
+                                            options_from_collection_for_select(@teams, 'team', 'team', f.object.champs) ,
+                                            :required => true,:prompt => true, :options => 'TYPE' %></div>
+        </div>
+
+
+      </div>
+    </section>
+
+  </article>
+
+
+
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
