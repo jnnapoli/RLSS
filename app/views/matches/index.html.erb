@@ -77,6 +77,12 @@
 
 <div style="text-align: center"> <%= will_paginate @matches, :previous_label => ' &#8592; Prev' %></div>
 <br>
+
+<div style="text-align: center"><a href="https://scuffesports.com/ArchiveMatches1.html">Archived Matches</a></div>
+
+
+
+
 <% if user_signed_in? %>
   <%= link_to "<button style='color:black'>Create New Match</button>".html_safe, "/matches/new" %>
 <% end %>
