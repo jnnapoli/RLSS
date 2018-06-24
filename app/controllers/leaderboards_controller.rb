@@ -11,19 +11,19 @@ class LeaderboardsController < ApplicationController
 
   # GET /leaderboards/sunday
   def sunday
-    @leaderboards = Leaderboard.all.sort_by{|e| e.sun_points}.reverse.paginate(:page => params[:page], :per_page => 10)
+    @leaderboards = Leaderboard.where("sun_points > '0'").sort_by{|e| e.sun_points}.reverse.paginate(:page => params[:page], :per_page => 10)
   end
 
 
   # GET /leaderboards/wednesday
   def wednesday
-    @leaderboards = Leaderboard.all.sort_by{|e| e.wed_points}.reverse.paginate(:page => params[:page], :per_page => 10)
+    @leaderboards = Leaderboard.where("wed_points > 0").sort_by{|e| e.wed_points}.reverse.paginate(:page => params[:page], :per_page => 10)
   end
 
 
   # GET /leaderboards/friday
   def friday
-    @leaderboards = Leaderboard.all.sort_by{|e| e.fri_points}.reverse.paginate(:page => params[:page], :per_page => 10)
+    @leaderboards = Leaderboard.where("fri_points > 0").sort_by{|e| e.fri_points}.reverse.paginate(:page => params[:page], :per_page => 10)
   end
 
   # GET /leaderboards/1
