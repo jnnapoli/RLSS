@@ -1,61 +1,71 @@
+</br>
+
 <h1 style="Text-Align: Center;">Monthly Leaderboards (Wednesday)</h1>
+</br>
+</br>
 
-
-
-<div style="text-align: center"> <%= will_paginate @leaderboards, :previous_label => ' &#8592; Prev'%></div>
 <div style="text-align: center; color:black">
 
-  <%= link_to "<button style='color:black'>Sunday</button>".html_safe, "/leaderboards/sunday" %>
+  <%= link_to "<button class='btn-sm' style='color:black'>Sunday</button>".html_safe, "/leaderboards/sunday" %>
 
-  <%= link_to "<button style='color:black'>Wednesday</button>".html_safe, "/leaderboards/wednesday" %>
+  <%= link_to "<button  class='btn-sm' style='color:black'>Wednesday</button>".html_safe, "/leaderboards/wednesday" %>
 
-  <%= link_to "<button style='color:black'>Friday</button>".html_safe, "/leaderboards/friday" %>
+  <%= link_to "<button  class='btn-sm' style='color:black'>Friday</button>".html_safe, "/leaderboards/friday" %>
   &nbsp; &nbsp; &nbsp; &nbsp;
-  <%= link_to "<button style='color:black'>Overall</button>".html_safe, "/leaderboards/" %>
+  <%= link_to "<button  class='btn-sm' style='color:black'>Overall</button>".html_safe, "/leaderboards/" %>
 
 </div>
 
-<% increment = 0 %>
 
-<table>
-  <thead>
+<div class="myTable">
+  <div class="digg_pagination"><%= will_paginate @leaderboards, :previous_label => ' &#8592; Prev', :page_links => false %></div>
+
+
+  </br></br>
+
+  <table style="text-align: center" class="table table-sm table-striped table-bordered table-hover">
+    <thead class="thead-dark">
     <tr>
 
-      <th>Team</th>
-      <th>Wednesday Points</th>
-      <th>Wednesday Wins</th>
-      <th>Wednesday 2nds</th>
-      <th>Wednesday Semis</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      <th>Team Name</th>
+      <th style="width: 100px;" class="align-middle">Points</th>
 
-  <tbody>
+      <th style="width: 100px;" class="align-middle">Wins</th>
+      <th style="width: 100px;" class="align-middle">2nds</th>
+      <th style="width: 100px;" class="align-middle">Semis</th>
+
+    </tr>
+    </thead>
+
+    <tbody>
     <% @leaderboards.each do |leaderboard| %>
       <tr>
-
         <td><%= leaderboard.team %></td>
-        <td><%= leaderboard.wed_points %></td>
+        <td><%= leaderboard.sun_points + leaderboard.wed_points + leaderboard.fri_points %></td>
 
-        <td><%= leaderboard.wednesday_wins %></td>
-
-        <td><%= leaderboard.wednesday_2nds %></td>
-
-        <td><%= leaderboard.wednesday_semis %></td>
-
+        <td><%= leaderboard.sunday_wins + leaderboard.wednesday_wins + leaderboard.friday_wins %></td>
+        <td><%= leaderboard.sunday_2nds + leaderboard.wednesday_2nds + leaderboard.friday_2nds %></td>
+        <td><%= leaderboard.sunday_semis + leaderboard.wednesday_semis + leaderboard.friday_semis %></td>
 
         <% if user_signed_in? %>
-        <td><%= link_to 'Show', leaderboard %></td>
-        <td><%= link_to 'Edit', edit_leaderboard_path(leaderboard) %></td>
-        <td><%= link_to 'Destroy', leaderboard, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Show', leaderboard %></td>
+          <td><%= link_to 'Edit', edit_leaderboard_path(leaderboard) %></td>
+          <td><%= link_to 'Destroy', leaderboard, method: :delete, data: {confirm: 'Are you sure?'} %></td>
         <% end %>
 
       </tr>
     <% end %>
-  </tbody>
-</table>
-<div style="text-align: center"> <%= will_paginate @leaderboards, :previous_label => ' &#8592; Prev'%></div>
+    </tbody>
+  </table>
+
+
+  <div class="digg_pagination"><%= will_paginate @leaderboards, :previous_label => ' &#8592; Prev', :page_links => false %></div>
+  </br>
+</div>
+
+
 <br>
+
 
 <% if user_signed_in? %>
   <%= link_to "<button style='color:black'>Create New Team</button>".html_safe, "/leaderboards/new" %>

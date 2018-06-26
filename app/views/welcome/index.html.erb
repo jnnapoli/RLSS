@@ -1,45 +1,74 @@
-<body>
-    <div style="text-align: center">
-    <h1 >Scuff Series Tournaments </br> </h1><h3> 2v2s on XB1/PC/Switch</h3>
-    </div>
-</br>
-
-    <h3>Tournaments are run weekly throughout the month. Points are rewarded and tallied at the end of each Tournament.</h3>
 
 
-    <p>
-      1)  Champions are Rewarded 15 Points per tourney.
-    </br>
-      2)  Runner-Ups are Rewarded 10 Points per tourney.
-      </br>
-      3)  Semi-Finalists are Rewarded 7 Points per tourney.
-      </br>
-    </p>
-The top 16 teams before the final Sunday/Wednesday/Friday of the month will be QUALIFIED for a FINAL PRIVATE TOURNEY NIGHT (3 rounds) and have a chance to be the:
-    <h3>Scuff Series 2v2 Sunday/Wednesday/Friday Champs</h3>
-    </br>
-      Good Luck!
-    </br></br>
+<!-- Portfolio Item Heading -->
+<h1 class="my-4">Scuff Series
+  <small style=" font-size: 60%; font-family: 'Arial'">Rocket League Tournaments</small>
+</h1>
 
-      Point Leaderboard available here: <a href="https://scuffesports.com/leaderboards">Leaderboards</a>
-    </br>
-    </br>
+<!-- Portfolio Item Row -->
+<div class="row">
 
+  <div class="col-md-8">
+    <div class="embed-responsive embed-responsive-16by9">
+    <div id="twitch-embed"></div>
 
-      Any attempt to game the system will result in a disqualification. Any team names or behavior against Rocket League, Twitch, or Scuff eSports TOS will not be eligible to compete.
+    <!-- Load the Twitch embed script -->
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
 
-    </br></br>
-<div style="text-align: center">
-    </br>
-    <a href="https://www.twitch.tv/dheg/events" target="_blank">Click here to set a reminder!</a> </br>
-    
-    
-    </br>
-    <a href="https://twitter.com/dheg_twitch" target="_blank">Follow dheg on Twitter for more details and events!</a> </br>
-    </h3>
-    
-    </br>
-    
-    <h1 style="text-align: center">ARE YOU SCUFF ENUFF?</h1>
+    <!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
+    <script type="text/javascript">
+        new Twitch.Embed("twitch-embed", {
+            width: 500,
+            height: 300,
+            channel: "dheg",
+            layout: "video"
+        });
+    </script>
+    </div></div>
+
+  <div class="col-md-4">
+    <h3 class="my-3">Crowdfunded Monthly Championships</h3>
+    <p> We are hosting and casting Rocket League Tournaments 3 nights a week. Each night has a Monthly Championship. Throughout the month teams can acquire points to qualify for that night. The top 16 teams before the Championship are qualified to compete.</p>
+    <h4 class="my-3">Upcoming Championships</h4>
+    <ul>
+      <li>Wednesday, July 25</li>
+      <li>Friday, July 27</li>
+      <li>Sunday, July 29</li>
+    </ul>
+    <div style="text-align: center"><a href="/rules"> Tournament Rules Here </a></div>
+  </div>
+
 </div>
-</body>
+<!-- /.row -->
+
+<!-- Related Projects Row -->
+<!--<h3 class="my-3">Get More from Scuff Series</h3>-->
+</br></br></br>
+<div class="row">
+
+  <div class="col-md-4  mb-3">
+    <a href="https://discordapp.com/invite/qxjmwjg" target="_blank">
+      <img class="img-fluid" src="discord.png" alt="Discord">
+    </a>
+  </div>
+
+  <div class="col-md-4  mb-3">
+    <a href="https://matcherino.com/u/dheg/502747/events" target="_blank">
+      <img class="img-fluid" src="matcherino.png" alt="Matcherino">
+    </a>
+  </div>
+
+  <div class="col-md-4  mb-3">
+    <a href="https://twitter.com/dheg_twitch" target="_blank">
+      <img class="img-fluid" src="twitter.png" alt="Twitter">
+    </a>
+  </div>
+
+  <!--<div class="col-md-3 col-sm-6 mb-4">-->
+    <!--<a href="#">-->
+      <!--<img class="img-fluid" src="http://placehold.it/500x300" alt="">-->
+    <!--</a>-->
+  <!--</div>-->
+
+</div>
+<!-- /.row -->

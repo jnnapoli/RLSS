@@ -5,10 +5,11 @@ Rails.application.routes.draw do
 
   #  ACTIVATE REGISTRATION BY COMMENTING THIS OUT
   get 'users/sign_up' => redirect('404.html')
-  
-  
-  
-  
+
+
+
+
+  get 'rules', action: :rules, controller: 'welcome'
   
   get 'matches/recent1', action: :recent1, controller: 'matches'
 
@@ -38,6 +39,10 @@ Rails.application.routes.draw do
   resources :brackets
   resources :leaderboards
   devise_for :users
+
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
 
   
   

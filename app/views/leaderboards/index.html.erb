@@ -1,36 +1,39 @@
+</br>
+
 <h1 style="Text-Align: Center;">Monthly Leaderboards (Overall)</h1>
-
-
-<div style="text-align: center"> <%= will_paginate @leaderboards, :previous_label => ' &#8592; Prev' %></div>
-
-
+</br>
+</br>
 
 <div style="text-align: center; color:black">
 
-  <%= link_to "<button style='color:black'>Sunday</button>".html_safe, "/leaderboards/sunday" %>
+  <%= link_to "<button class='btn-sm' style='color:black'>Sunday</button>".html_safe, "/leaderboards/sunday" %>
 
-  <%= link_to "<button style='color:black'>Wednesday</button>".html_safe, "/leaderboards/wednesday" %>
+  <%= link_to "<button  class='btn-sm' style='color:black'>Wednesday</button>".html_safe, "/leaderboards/wednesday" %>
 
-  <%= link_to "<button style='color:black'>Friday</button>".html_safe, "/leaderboards/friday" %>
+  <%= link_to "<button  class='btn-sm' style='color:black'>Friday</button>".html_safe, "/leaderboards/friday" %>
   &nbsp; &nbsp; &nbsp; &nbsp;
-  <%= link_to "<button style='color:black'>Overall</button>".html_safe, "/leaderboards/" %>
+  <%= link_to "<button  class='btn-sm' style='color:black'>Overall</button>".html_safe, "/leaderboards/" %>
 
 </div>
 
-<% increment = 0 %>
 
-<table>
-  <thead>
+<div class="myTable">
+  <div class="digg_pagination"><%= will_paginate @leaderboards, :previous_label => ' &#8592; Prev', :page_links => false %></div>
+
+
+  </br></br>
+
+  <table style="text-align: center" class="table table-sm table-striped table-bordered table-hover">
+    <thead class="thead-dark">
   <tr>
 
-    <th>Team</th>
-    <th>Total points</th>
+    <th>Team Name</th>
+    <th style="width: 100px;" class="align-middle">Points</th>
 
-    <th>Tourney Wins</th>
-    <th>Tourney 2nds</th>
-    <th>Tourney Semis</th>
+    <th style="width: 100px;" class="align-middle">Wins</th>
+    <th style="width: 100px;" class="align-middle">2nds</th>
+    <th style="width: 100px;" class="align-middle">Semis</th>
 
-    <th colspan="3"></th>
   </tr>
   </thead>
 
@@ -54,7 +57,13 @@
   <% end %>
   </tbody>
 </table>
-<div style="text-align: center"> <%= will_paginate @leaderboards, :previous_label => ' &#8592; Prev' %></div>
+
+
+  <div class="digg_pagination"><%= will_paginate @leaderboards, :previous_label => ' &#8592; Prev', :page_links => false %></div>
+</br>
+</div>
+
+
 <br>
 
 

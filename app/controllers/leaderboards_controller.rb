@@ -1,3 +1,5 @@
+require 'will_paginate/array'
+
 class LeaderboardsController < ApplicationController
   before_action :set_leaderboard, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!, only: [:new, :edit, :update, :destroy]
