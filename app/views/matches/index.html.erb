@@ -16,10 +16,10 @@
   <table style="text-align: center" class="table table-sm table-striped table-bordered table-hover">
   <thead class="thead-dark">
   <tr>
-    <th style="width: 100px;" class="align-middle">Start</th>
-    <th class="align-middle"> Match</th>
-    <th class="align-middle"> Winner</th>
-    <th class="align-middle"> VODs</th>
+    <th style="width: 55px;" class="align-middle">Start</th>
+    <th style="width: 50%;" class="align-middle"> Match</th>
+    <th style="width: 50%;" class="align-middle"> Winner</th>
+    <th style="width: 50px;" class="align-middle"> VODs</th>
   </tr>
   </thead>
 
@@ -27,15 +27,15 @@
 
   <% @matches.each do |match| %>
     <tr>
-      <td style="font-size:80%" class="align-middle">
-        <%= match.match_start.strftime("%m/%d/%Y") %>
-        <i class="fas fa-at"></i>
+      <td style="font-size:70%" class="align-middle myTD">
+        <%= match.match_start.strftime("%m/%d") %>  </br>
+        <i class="fas fa-at"></i></br>
         <%= match.match_start.strftime("%I:%M%p") %>
       </td>
 
-      <td class="align-middle"><%= match.team1.upcase + " vs. " + match.team2.upcase %> </td>
+      <td class="align-middle myTD"><%= match.team1.upcase + " vs. " + match.team2.upcase %> </td>
 
-      <td class="align-middle">
+      <td class="align-middle myTD">
         <% if match.winner.present? %>
           <%= match.winner.upcase %>
         <% else %>
@@ -44,14 +44,14 @@
         <% end %>
       </td>
 
-      <td class="align-middle">
+      <td class="align-middle myTD">
         <a class=" myTwitch" href="<%= match.vod_url %>" target="_blank">
           <i class="fab fa-twitch myTwitch"></i>
         </a>
-&nbsp;
-        <a href="#" >
-          <i class="fab fa-youtube myYoutube"></i>
-        </a>
+<!--&nbsp;-->
+        <!--<a href="#" >-->
+          <!--<i class="fab fa-youtube myYoutube"></i>-->
+        <!--</a>-->
       </td>
 
 

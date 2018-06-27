@@ -122,3 +122,14 @@ h1{
     font-weight:bold !important;
     font-family: "Tw Cen MT" !important;
 }
+
+table{
+    table-layout: fixed;
+}
+
+
+.myTD {
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
