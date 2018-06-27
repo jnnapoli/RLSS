@@ -133,3 +133,8 @@ table{
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+/* change the background color */
+.navbar-custom {
+    background-color: #212529;
+}
