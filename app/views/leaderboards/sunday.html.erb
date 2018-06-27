@@ -41,11 +41,11 @@
     <% @leaderboards.each do |leaderboard| %>
       <tr>
         <td><%= leaderboard.team %></td>
-        <td><%= leaderboard.sun_points + leaderboard.wed_points + leaderboard.fri_points %></td>
+        <td><%= leaderboard.sun_points %></td>
 
-        <td><%= leaderboard.sunday_wins + leaderboard.wednesday_wins + leaderboard.friday_wins %></td>
-        <td><%= leaderboard.sunday_2nds + leaderboard.wednesday_2nds + leaderboard.friday_2nds %></td>
-        <td><%= leaderboard.sunday_semis + leaderboard.wednesday_semis + leaderboard.friday_semis %></td>
+        <td><%= leaderboard.sunday_wins %></td>
+        <td><%= leaderboard.sunday_2nds  %></td>
+        <td><%= leaderboard.sunday_semis  %></td>
 
         <% if user_signed_in? %>
           <td><%= link_to 'Show', leaderboard %></td>
