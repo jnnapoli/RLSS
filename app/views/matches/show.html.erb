@@ -74,13 +74,12 @@ Click the team above to set the winner.
 </h3>
 </br>
 <%= link_to "<button style='color:black'>Edit Match</button>".html_safe, edit_match_path(@match) %>
+&nbsp;|&nbsp;
+<%= link_to "<button style='color:black'>Delete Match</button>".html_safe, @match, method: :delete, data: {confirm: 'Delete Match?'} %>
 </br>
-</br>
-</br>
+</br></br>
 <%= link_to "<button style='color:black'>Match History</button>".html_safe, matches_path %>
-
-|
-
+&nbsp;|&nbsp;
 <% if user_signed_in? %>
   <%= link_to "<button style='color:black'>Create New Match</button>".html_safe, "/matches/new" %>
 <% end %>
