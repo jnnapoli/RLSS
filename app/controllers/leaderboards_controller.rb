@@ -7,25 +7,25 @@ class LeaderboardsController < ApplicationController
   # GET /leaderboards
   # GET /leaderboards.json
   def index
-    @leaderboards = Leaderboard.all.sort_by{|e| e.sun_points+e.fri_points+e.wed_points}.reverse.paginate(:page => params[:page], :per_page => 10)
+    @leaderboards = Leaderboard.all.sort_by{|e| e.sun_points+e.fri_points+e.wed_points}.reverse.paginate(:page => params[:page], :per_page => 8)
   end
 
 
   # GET /leaderboards/sunday
   def sunday
-    @leaderboards = Leaderboard.where("sun_points > '0'").sort_by{|e| e.sun_points}.reverse.paginate(:page => params[:page], :per_page => 16)
+    @leaderboards = Leaderboard.where("sun_points > '0'").sort_by{|e| e.sun_points}.reverse.paginate(:page => params[:page], :per_page => 8)
   end
 
 
   # GET /leaderboards/wednesday
   def wednesday
-    @leaderboards = Leaderboard.where("wed_points > 0").sort_by{|e| e.wed_points}.reverse.paginate(:page => params[:page], :per_page => 16)
+    @leaderboards = Leaderboard.where("wed_points > 0").sort_by{|e| e.wed_points}.reverse.paginate(:page => params[:page], :per_page => 8)
   end
 
 
   # GET /leaderboards/friday
   def friday
-    @leaderboards = Leaderboard.where("fri_points > 0").sort_by{|e| e.fri_points}.reverse.paginate(:page => params[:page], :per_page => 16)
+    @leaderboards = Leaderboard.where("fri_points > 0").sort_by{|e| e.fri_points}.reverse.paginate(:page => params[:page], :per_page => 8)
   end
 
   # GET /leaderboards/1
